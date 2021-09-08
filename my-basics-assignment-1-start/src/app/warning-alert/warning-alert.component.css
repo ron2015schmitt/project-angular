@@ -1,9 +1,6 @@
 p {
   color: black;
-  background-color:yellow;
-  border-color:darkred;
-  border-width: 1px;
-  border-style: groove;
-  margin: 5px;
-  padding: 4px;
+  background-color:mistyrose;
+  border:red solid 1px;
+  padding: 20px;
 }
