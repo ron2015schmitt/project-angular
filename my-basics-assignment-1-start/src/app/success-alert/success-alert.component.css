@@ -1,0 +1,9 @@
+p {
+  color: black;
+  background-color: greenyellow;
+  border-color: darkgreen;
+  border-width: 1px;
+  border-style: groove;
+  margin: 5px;
+  padding: 4px;
+}
