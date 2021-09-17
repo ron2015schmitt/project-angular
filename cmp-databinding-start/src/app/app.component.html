@@ -1,4 +1,8 @@
 <div class="container">
+  <!--
+    (Output Name of EventEventEmitter)="code to execute when event occurs"
+    $event = object emmitted: type is given in EventEmitter<TypeHere>()
+  -->
   <app-cockpit
   (serverCreated)="onServerAdded($event)"
   (bpCreated)="onBlueprintAdded($event)">
