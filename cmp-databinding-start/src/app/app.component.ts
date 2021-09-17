@@ -29,4 +29,13 @@ export class AppComponent {
     });
   }
 
+  onChangeFirstElement() {
+    this.serverElements[0].name = 'Change';
+  }
+
+  onDestroyFirstElement() {
+    this.serverElements.splice(0, 1);
+  }
+
+
 }
