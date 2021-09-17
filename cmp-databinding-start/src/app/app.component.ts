@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   serverElements = [{
     name: 'Server B',
-    type: 'node.js',
+    type: 'blueprint',
     content: 'web app',
   }];
 }
