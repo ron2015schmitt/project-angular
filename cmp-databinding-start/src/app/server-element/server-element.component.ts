@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -7,7 +7,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoChec
   // encapsulation: ViewEncapsulation.Emulated,
 })
 export class ServerElementComponent
-implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewInit, AfterContentChecked, OnDestroy {
+  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewInit, AfterContentChecked, OnDestroy {
 
   @Input('srvElement') element: {
     name: string,
@@ -15,14 +15,17 @@ implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewInit, AfterCon
     content: string,
   };
   @Input() name: string;
-  @ViewChild('heading', { static: true } ) header: ElementRef;
+  @ViewChild('heading', { static: true }) header: ElementRef;
+  @ContentChild('contentParagraph', { static: true }) paragraph: ElementRef;
 
   constructor() {
     console.log(`ServerElementComponent: constructor called`);
   }
 
   ngOnInit(): void {
-    console.log(`ServerElementComponent: ngOnInit called  content=${this.header.nativeElement.textContent}`);
+    console.log(`ServerElementComponent: ngOnInit called
+    content=${this.header.nativeElement.textContent}
+    paragraph=${this.paragraph.nativeElement.textContent}`);
   }
 
   ngDoCheck(): void {
@@ -34,7 +37,9 @@ implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewInit, AfterCon
   }
 
   ngAfterContentInit(): void {
-    console.log(`ServerElementComponent: ngAfterContentInit called`);
+    console.log(`ServerElementComponent: ngAfterContentInit called
+    paragraph=${this.paragraph.nativeElement.textContent}`);
+
   }
 
   ngAfterViewInit(): void {
