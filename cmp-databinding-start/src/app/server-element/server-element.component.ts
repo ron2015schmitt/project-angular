@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
 
-  element = {
-    name: '',
-    type: '',
-    content: '',
+  @Input() element: {
+    name: string,
+    type: string,
+    content: string,
   };
 
   constructor() { }
