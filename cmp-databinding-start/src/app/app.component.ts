@@ -21,6 +21,7 @@ export class AppComponent {
   }
 
   onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    console.log(`onBlueprintAdded`)
     this.serverElements.push({
       type: 'blueprint',
       name: blueprintData.serverName,
